@@ -1,0 +1,120 @@
+:root {
+  --charcoal: #1C1C1C; /* charcoal black */
+  --grayish: #6E6E6E;  /* medium gray */
+  --orangeAccent: rgb(249, 116, 42);
+  --purpleAccent: rgb(108, 42, 249);
+
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* Glass effect */
+  background-color: rgba(28, 28, 28, 0.078); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+}
+
+.nav-desktop {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: 'Space Grotesk', sans-serif;
+  text-decoration: none;
+  color: var(--grayish); /* Updated text color */
+  font-weight: 400;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--orangeAccent); /* Updated hover color */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: var(--orangeAccent);
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--orangeAccent); /* Updated bar color */
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links-mobile {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--charcoal); /* Updated mobile nav bg */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .nav-links-mobile .nav-link {
+    font-size: 1.2rem;
+    color: var(--grayish); /* Updated mobile link color */
+  }
+
+  .nav-links-mobile .nav-link:hover {
+    color: var(--orangeAccent);
+  }
+}

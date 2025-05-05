@@ -1,0 +1,188 @@
+/* PredictiveAnalytics.css */
+
+.predictive-section {
+    padding: 15px;
+    color: var(--charcoal);
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .hero-3d-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .hero-text{
+    height: 100vh;
+  }
+  
+  .hero-text .title {
+    font-size: 100px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--charcoal);
+    font-weight: 600;
+  }
+  
+  .intro {
+    font-size: 14px;
+    color: var(--charcoal);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .section h2 {
+    font-size: 32px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--orangeAccent);
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .offer-card {
+    background: white;
+    color: var(--charcoal);
+    padding: 1.5rem;
+    border-radius: 0px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .offer-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .offer-card h3 {
+    font-size: 20px;
+    margin-bottom: 0.75rem;
+    color: var(--purpleAccent);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .offer-card p {
+    font-size: 14px;
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+
+    line-height: 1.6;
+  }
+  .industry-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .industry-card {
+    background: white;
+    color: var(--charcoal);
+    padding: 1.5rem;
+    border-radius: 0px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .industry-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .industry-card h3 {
+    font-size: 20px;
+    color: var(--purpleAccent);
+    margin-bottom: 0.75rem;
+  }
+  
+  .industry-card p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .tools-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .tool-card {
+    background: white;
+    color: var(--charcoal);
+    padding: 1.5rem;
+    border-radius: 0px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .tool-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tool-icon {
+    font-size: 2.2rem;
+    color: var(--orangeAccent);
+    margin-bottom: 0.75rem;
+  }
+  
+  .tool-card h3 {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+    color: var(--purpleAccent);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .tool-card p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  
+  
+  .cta-box {
+    height: 100vh;
+    color: white;
+    overflow: hidden;
+    border-radius: 0px;
+    text-align: left;
+    margin-top: 3rem;
+  }
+  
+  .cta-box h3 {
+    font-size: 100px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cta-box p {
+    color: var(--charcoal);
+    font-size: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-bottom: 1rem;
+  }
+  
+  .cta-button {
+    background: var(--orangeAccent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #e85c1b;
+  }
+  

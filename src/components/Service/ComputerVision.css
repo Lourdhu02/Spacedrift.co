@@ -1,0 +1,94 @@
+/* NLPSolutions.css */
+
+.cv-section {
+    padding: 15px;
+    color: var(--charcoal);
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  
+  .hero-3d-wrapper {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .hero-canvas {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .hero-text{
+    height: 100vh;
+  }
+  
+  .intro {
+    font-size: 14px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+  
+  .cv-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .cv-card {
+    background: white;
+    color: var(--charcoal);
+    padding: 1.5rem;
+    border-radius: 0px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .cv-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cv-card h3 {
+    font-size: 18px;
+    margin-bottom: 0.75rem;
+    color: var(--orangeAccent);
+  }
+  
+  .cv-card p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .cta-box {
+    color: white;
+    height: 150vh;
+    text-align: left;
+  }
+  
+  .cta-box h3 {
+    font-size: 100px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .cta-box p {
+    font-size: 14px;
+    margin-bottom: 1.2rem;
+  }
+  
+  .cta-button {
+    background: var(--orangeAccent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background: #e65b1c;
+  }

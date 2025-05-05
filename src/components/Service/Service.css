@@ -1,0 +1,38 @@
+:root {
+    --charcoal: #1C1C1C; /* charcoal black */
+    --grayish: #6E6E6E;  /* medium gray */
+    --orangeAccent: rgb(249, 116, 42);
+    --purpleAccent: rgb(108, 42, 249);
+  
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+  
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+.slide h1{
+    font-family: 'Space Grotesk', sans-serif;
+}
+div{
+    font-family: 'Inter', sans-serif;
+}
+h3{
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--grayish);
+
+}
+p{
+    font-family: 'Inter', sans-serif;
+}
+.title{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    color: var(--orangeAccent);
+    margin-bottom: 2rem;
+}
