@@ -69,11 +69,11 @@
   
   .learn-card button {
     border: none;
-    color: white;
+    background-color:var(--purpleAccent);
     padding: 0.5rem 1rem;
+    color: white;
     font-weight: 600;
     font-size: 14px;
-    border-radius: 4px;
     cursor: pointer;
     align-self: start;
     transition: background 0.3s ease;

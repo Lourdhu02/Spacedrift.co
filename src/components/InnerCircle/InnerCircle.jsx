@@ -39,6 +39,51 @@ function InnerCircle() {
   const typewriterRef = useRef(null)
   const isVisible = useInView(typewriterRef, { once: true, margin: '-50px' })
 
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    portfolio: '',
+    reason: ''
+  })
+
+  const [responseMsg, setResponseMsg] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setLoading(true)
+    setResponseMsg('')
+
+    try {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyb5lUlMAUgh67px_4HkSaAJZ1atEF-M_jco2B53c51uhtjlhk3XYg_xaIcuy1rWA/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+
+      const result = await response.json()
+
+      if (result.status === 'success') {
+        setResponseMsg('Application submitted successfully!')
+        setFormData({ name: '', email: '', phone: '', portfolio: '', reason: '' })
+      } else {
+        setResponseMsg('Submission failed: ' + result.message)
+      }
+    } catch (error) {
+      console.error(error)
+      setResponseMsg('')
+    }
+
+    setLoading(false)
+  }
+
   return (
     <section className="inner-circle-section">
       <RevealOnScroll>
@@ -47,7 +92,7 @@ function InnerCircle() {
           <p>
             The Inner Circle is a curated tech community where passionate learners, aspiring data scientists, and professionals converge to collaborate, grow, and innovate together. From exclusive access to advanced AI projects and mentorship from industry experts, to hands-on learning opportunities, this initiative is tailored to empower the next wave of tech leaders. Whether you're looking to boost your resume, gain experience, or find your next collaborator, the Inner Circle is your gateway to a thriving, resource-rich ecosystem designed for impactful growth.
           </p>
-
+          <button className="inner-cta">Apply to Join</button>
         </div>
       </RevealOnScroll>
 
@@ -101,12 +146,14 @@ function InnerCircle() {
       <RevealOnScroll>
         <div className="inner-form">
           <h2>Apply Now</h2>
-          <form>
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Email Address" required />
-            <input type="text" placeholder="LinkedIn or Portfolio URL" required />
-            <textarea placeholder="Why do you want to join?" rows="4" required></textarea>
-            <button type="submit">Submit Application</button>
+          <form onSubmit={handleSubmit}>
+            <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
+            <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required />
+            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" required />
+            <input type="text" name="portfolio" value={formData.portfolio} onChange={handleChange} placeholder="LinkedIn or Portfolio URL" required />
+            <textarea name="reason" value={formData.reason} onChange={handleChange} placeholder="Why do you want to join?" rows="4" required></textarea>
+            <button type="submit" disabled={loading}>{loading ? 'Submitting...' : 'Submit Application'}</button>
+            {responseMsg && <p className="form-response">{responseMsg}</p>}
           </form>
         </div>
       </RevealOnScroll>

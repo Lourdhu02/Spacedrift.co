@@ -53,7 +53,7 @@ function InternshipCourses() {
             <p>
               Dive into deep neural networks, CNNs, RNNs, and transformer architectures. Tackle image, text, and sequential tasks under expert supervision and deliver model-based solutions to real-world use cases.
             </p>
-            <button onClick={() => navigate('/internships/deep-learning')}>Know More</button>
+            <button onClick={() => navigate('deep-learning')}>Know More</button>
           </div>
 
           <div className="learn-card">
@@ -61,7 +61,7 @@ function InternshipCourses() {
             <p>
               A practical exploration of data pipelines, EDA, and modeling techniques. Participants tackle problems from domains like healthcare, finance, and e-commerce—equipping them with a complete data science toolkit.
             </p>
-            <button onClick={() => navigate('/internships/data-science')}>Know More</button>
+            <button onClick={() => navigate('data-science')}>Know More</button>
           </div>
 
           <div className="learn-card">
@@ -69,7 +69,7 @@ function InternshipCourses() {
             <p>
               Develop models using regression, classification, clustering, and ensemble learning. Work on live projects and learn how to apply ML algorithms in business and product settings.
             </p>
-            <button onClick={() => navigate('/internships/machine-learning')}>Know More</button>
+            <button onClick={() => navigate('machine-learning')}>Know More</button>
           </div>
 
           <div className="learn-card">
@@ -77,7 +77,7 @@ function InternshipCourses() {
             <p>
               Build dynamic web apps using React, Flask, and Node.js. Learn API creation, frontend/backend integration, and deploy full-stack solutions using modern dev tools and workflows.
             </p>
-            <button onClick={() => navigate('/internships/web-development')}>Know More</button>
+            <button onClick={() => navigate('web-development')}>Know More</button>
           </div>
 
           <div className="learn-card">

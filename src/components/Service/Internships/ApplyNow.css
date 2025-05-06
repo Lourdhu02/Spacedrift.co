@@ -1,0 +1,46 @@
+.apply-form-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    font-family: sans-serif;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .apply-form h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .apply-form label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  
+  .apply-form input,
+  .apply-form select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 0.4rem;
+  }
+  
+  .checkbox-group {
+    margin: 1rem 0;
+  }
+  
+  .submit-btn {
+    background-color: #ff6b2d;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  

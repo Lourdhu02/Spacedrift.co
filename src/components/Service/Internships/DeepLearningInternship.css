@@ -1,0 +1,61 @@
+.dl-container {
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 15px;
+    color: #1c1c1c;
+  }
+  
+  .dl-header {
+    margin-bottom: 10px;
+  }
+  
+  .dl-header h1 {
+    font-size: 120px;
+    color: var(--orangeAccent);
+  }
+  
+  .dl-header p {
+    font-size: 18px;
+    color: var(--grayish);
+  }
+  
+  
+  .dl-section h2 {
+    font-size: 28px;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+  
+  .dl-section ul li {
+    margin-bottom: 10px;
+    list-style:disc;
+  }
+  
+  .dl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .dl-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+  
+  .apply-btn {
+    background-color: var(--orangeAccent);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .apply-btn:hover {
+    background-color: var(--purpleAccent);
+  transition: background-color 0.3s ease;
+  }
+  

@@ -35,7 +35,8 @@
 
 .logo {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.5rem;
+  font-size: 16px;
+  color: var(--orangeAccent); /* Updated logo color */
   font-weight: 400;
 
 }
