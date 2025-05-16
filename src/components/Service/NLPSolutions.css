@@ -4,7 +4,7 @@
     padding: 15px;
     color: var(--charcoal);
     min-height: 100vh;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Figtree", sans-serif;
   }
   
   .hero-3d-wrapper {
@@ -32,63 +32,45 @@
   }
   
   .nlp-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     gap: 1.5rem;
     margin-bottom: 3rem;
   }
   
   .nlp-card {
-    background: white;
-    color: var(--charcoal);
-    padding: 1.5rem;
-    border-radius: 0px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 28%;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+   transform: scale(1);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   }
   
   .nlp-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.02);
+  background-color: var(--white);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
   }
   
   .nlp-card h3 {
-    font-size: 18px;
-    margin-bottom: 0.75rem;
-    color: var(--orangeAccent);
+   font-family: "Figtree", sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--grayish);
+  margin-bottom: 0.5rem;
   }
   
   .nlp-card p {
-    font-size: 14px;
-    line-height: 1.6;
+    font-family: "Figtree", sans-serif;
+  font-size: 18px;
+  color: var(--charcoal);
+  line-height: 1.4;
   }
   
-  .cta-box {
-    color: white;
-    height: 150vh;
-    text-align: left;
-  }
   
-  .cta-box h3 {
-    font-size: 100px;
-    margin-bottom: 0.75rem;
-  }
-  
-  .cta-box p {
-    font-size: 14px;
-    margin-bottom: 1.2rem;
-  }
-  
-  .cta-button {
-    background: var(--orangeAccent);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .cta-button:hover {
-    background: #e65b1c;
-  }

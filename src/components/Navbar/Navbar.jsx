@@ -1,51 +1,75 @@
-import './Navbar.css'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import './Navbar.css';
+import { Link } from 'react-router-dom';
+import { LuDot } from "react-icons/lu";
+import { useState } from 'react';
+import { IoChevronForwardCircleOutline } from "react-icons/io5";
+import { MdOutlineArrowOutward } from "react-icons/md";
+import { motion, AnimatePresence } from 'framer-motion';
 
 function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-    exit: { opacity: 0, x: 50, transition: { duration: 0.2 } }
-  }
+    hidden: { y: '-100%' },
+    visible: { y: 0, transition: { duration: 0.4 } },
+    exit: { y: '-100%', transition: { duration: 0.3 } }
+  };
+
+  const overlayVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.3 } },
+    exit: { opacity: 0, transition: { duration: 0.2 } }
+  };
 
   return (
     <nav className="navbar">
-      <div className="logo">Spacedrift</div>
-      <div className="nav-desktop">
-        <Link to="/" className="nav-link">Home</Link>
-        <Link to="/services" className="nav-link">Services</Link>
-        <Link to="/inner-circle" className="nav-link">Inner Circle</Link>
-        <Link to="/contact" className="nav-link">Get in Touch</Link>
-      </div>
+      <button 
+        className="menu-button" 
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+      >
+      <LuDot />MENU
+      </button>
 
-      <div className="hamburger" onClick={() => setIsOpen(!isOpen)}>
-        <motion.span className="bar" animate={{ rotate: isOpen ? 45 : 0, y: isOpen ? 6 : 0 }}></motion.span>
-        <motion.span className="bar" animate={{ opacity: isOpen ? 0 : 1 }}></motion.span>
-        <motion.span className="bar" animate={{ rotate: isOpen ? -45 : 0, y: isOpen ? -6 : 0 }}></motion.span>
+      <div className="logo"><strong>SPACEDRIFT</strong>.CO</div>
+
+      <div className="contact-link">
+        <Link to="/contact" className="nav-link">LET'S TALK  <span><MdOutlineArrowOutward /></span></Link>
       </div>
 
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="nav-links-mobile"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={menuVariants}
-          >
-            <Link to="/" onClick={() => setIsOpen(false)} className="nav-link">Home</Link>
-            <Link to="/services" onClick={() => setIsOpen(false)} className="nav-link">Services</Link>
-            <Link to="/inner-circle" onClick={() => setIsOpen(false)} className="nav-link">Inner Circle</Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)} className="nav-link">Get in Touch</Link>
-          </motion.div>
+        {isMenuOpen && (
+          <>
+            <motion.div 
+              className="overlay" 
+              variants={overlayVariants} 
+              initial="hidden" 
+              animate="visible" 
+              exit="exit"
+              onClick={() => setIsMenuOpen(false)}
+            />
+
+            <motion.div 
+              className="fullscreen-menu" 
+              variants={menuVariants} 
+              initial="hidden" 
+              animate="visible" 
+              exit="exit"
+            >
+              <button 
+                className="close-button" 
+                onClick={() => setIsMenuOpen(false)}
+              >
+                ✕
+              </button>
+              <Link to="/" className="dropdown-item" onClick={() => setIsMenuOpen(false)}>HOME <small>01</small> </Link>
+              <Link to="/services" className="dropdown-item" onClick={() => setIsMenuOpen(false)}>SERVICES <small>02</small></Link>
+              <Link to="/inner-circle" className="dropdown-item" onClick={() => setIsMenuOpen(false)}>INNER CIRCLE <small>03</small></Link>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

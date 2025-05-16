@@ -8,12 +8,12 @@ function DataScienceInternship() {
   return (
     <div className="ds-container">
       <header className="ds-header">
-        <h1>Data Science Internship</h1>
+        <h1>Data Science <strong>Internship</strong></h1>
         <p>Master the End-to-End Data Science Pipeline through Real Projects</p>
       </header>
 
       <section className="ds-section intro">
-        <h2>Duration: 3 Months</h2>
+        <h2>Duration - 3 Months</h2>
         <p>
           This 3-month internship provides a structured learning path for individuals aiming to break into the data science domain. With a strong focus on applied learning, participants will work on real business problems while developing technical expertise in data handling, modeling, and interpretation.
         </p>
@@ -32,7 +32,7 @@ function DataScienceInternship() {
         </ul>
       </section>
 
-      <section className="ds-section features">
+      <section className="ds-section">
         <h2>Internship Highlights</h2>
         <div className="ds-grid">
           <div className="ds-card">
@@ -62,7 +62,7 @@ function DataScienceInternship() {
         </div>
       </section>
 
-      <section className="ds-section apply">
+      <section className="ds-section">
         <h2>Who Should Apply?</h2>
         <p>
           This internship is perfect for final-year students, recent graduates, and professionals transitioning into data roles. Applicants should have a basic understanding of Python and a genuine interest in data-driven problem-solving. No prior experience in machine learning is required, though familiarity with libraries such as pandas and NumPy will be beneficial.

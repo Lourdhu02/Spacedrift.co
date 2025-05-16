@@ -2,35 +2,42 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import './Service.css'
 import { useNavigate } from 'react-router-dom'
+import { GoArrowUpRight } from "react-icons/go";
+import { FiBarChart, FiCode, FiCpu, FiUsers } from "react-icons/fi";  // Updated icons from Feather icons
 
 const services = [
   {
-    title: 'AI-Powered Predictive Analytics',
+    title: 'AI-POWERED PREDICTIVE ANALYTICS',
     description:
-      'We use historical data and machine learning models to forecast future trends, such as sales forecasting, customer churn prediction, and stock price estimation. These insights empower industries like retail, finance, healthcare, and logistics to make proactive, data-driven decisions. Our solutions integrate Python pipelines, time-series models, and AutoML platforms to deliver accurate and scalable predictive systems.',
-    route: '/services/predictive-analytics'
+      'We use data and machine learning models to predict future trends like sales, customer churn, and stock prices, helping industries like retail and finance make informed, proactive decisions.',
+    route: '/services/predictive-analytics',
+    icon: <FiBarChart />
   },
   {
-    title: 'Natural Language Processing (NLP) Solutions',
+    title: 'NATURAL LANGUAGE PROCESSING (NLP) SOLUTIONS',
     description:
-      'We design intelligent NLP systems that automate text understanding—ranging from sentiment analysis and chatbots to document classification and summarization. Ideal for HR, customer service, legal firms, and content platforms, we leverage tools like BERT, GPT, spaCy, and LangChain to deliver state-of-the-art, domain-adapted solutions.',
-    route: '/services/nlp'
+      'We build intelligent NLP systems that enable computers to understand and process human language, supporting tasks like sentiment analysis, chatbots, and document summarization across industries.',
+    route: '/services/nlp',
+    icon: <FiCpu />
   },
   {
-    title: 'Computer Vision Applications',
+    title: 'COMPUTER VISION APPLICATIONS',
     description:
-      'We develop image and video processing applications for object detection, facial recognition, quality checks, and anomaly detection. Our solutions use YOLOv8, OpenCV, and TensorFlow to power use cases in manufacturing, healthcare imaging, smart surveillance, and retail automation.',
-    route: '/services/computer-vision'
+      'We develop advanced computer vision solutions for tasks like object detection, facial recognition, and quality control, empowering industries like manufacturing and healthcare with accurate, automated analysis.',
+    route: '/services/computer-vision',
+    icon: <FiCode />
   },
   {
-    title: 'Internships & Courses',
+    title: 'INTERNSHIPS & COURSES',
     description:
-      'Our industry-grade internship and course programs provide hands-on experience in data science, machine learning, and full-stack AI pipelines. Participants work on real projects using Python, TensorFlow, and Flask. We offer beginner to advanced tracks with mentor support and certification.',
-    route: '/services/internships'
+      'Our internships and courses offer hands-on learning experiences in data science, machine learning, and AI pipelines, giving participants real-world skills and mentorship for career growth.',
+    route: '/services/internships',
+    icon: <FiUsers />
   },
 ]
 
-const ServiceCard = ({ title, description, route }) => {
+
+const ServiceCard = ({ title, description, route, icon }) => {
   const navigate = useNavigate()
   return (
     <motion.div
@@ -38,31 +45,18 @@ const ServiceCard = ({ title, description, route }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
       viewport={{ once: true }}
-      className="service-card"
-      style={{
-        borderRadius: '0px',
-        borderBottom: '1.5px solid var(--charcoal)',
-        width: '100%',
-        color: 'white',
-        textAlign: 'left',
-      }}
+      className="service-card-3d"
     >
-      <h3 style={{ fontSize: '24px', marginBottom: '0.5rem' }}>{title}</h3>
-      <p style={{ fontSize: '14px', lineHeight: '1', color: 'var(--charcoal)' }}>{description}</p>
+      <div className="service-card-header">
+        <h1 className="service-card-icon">{icon}</h1>
+        <h3 className="service-card-title">{title}</h3>
+      </div>
+      <p className="service-card-description">{description}</p>
       <button
-        style={{
-          marginTop: '0.75rem',
-          marginBottom: '1rem',
-          padding: '0.5rem 1rem',
-          backgroundColor: 'var(--orangeAccent)',
-          color: 'white',
-          border: 'none',
-          fontWeight: 600,
-          cursor: 'pointer',
-        }}
+        className="service-card-button"
         onClick={() => navigate(route)}
       >
-        Know More
+        Know More <span> <GoArrowUpRight /></span>
       </button>
     </motion.div>
   )
@@ -70,39 +64,25 @@ const ServiceCard = ({ title, description, route }) => {
 
 function Services() {
   return (
-    <>
-      <motion.section
-        className="slide"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        style={{
-          minHeight: '100vh',
-          padding: '15px',
-          color: 'white',
-          textAlign: 'left',
-        }}
-      >
-        <h1 className='title'>Our Services</h1>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            gap: '1rem',
-          }}
-        >
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              title={service.title}
-              description={service.description}
-              route={service.route}
-            />
-          ))}
-        </div>
-      </motion.section>
-    </>
+    <motion.section
+      className="services-section"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
+      <h1 className='title'>OUR SERVICES</h1>
+      <div className="service-cards-container">
+        {services.map((service, index) => (
+          <ServiceCard
+            key={index}
+            title={service.title}
+            description={service.description}
+            route={service.route}
+            icon={service.icon}  // Pass the icon to the ServiceCard component
+          />
+        ))}
+      </div>
+    </motion.section>
   )
 }
 

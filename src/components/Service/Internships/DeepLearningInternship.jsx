@@ -8,18 +8,18 @@ function DeepLearningInternship() {
   return (
     <div className="dl-container">
       <header className="dl-header">
-        <h1>Deep Learning Internship</h1>
+        <h1>Deep Learning <strong>Internship</strong></h1>
         <p>Transform Your AI Skills with Hands-On Deep Learning Experience</p>
       </header>
 
-      <section className="dl-section intro">
+      <section className="dl-section">
         <h2>Duration: 3 – 5 Months</h2>
         <p>
           This internship offers an immersive experience in cutting-edge Deep Learning technologies. Designed for those who want to gain industry-level expertise, the program includes detailed theoretical grounding, practical model building, and real-time project delivery. Interns will gain exposure to convolutional and recurrent neural networks, transformers, and deployment of AI models to cloud platforms.
         </p>
       </section>
 
-      <section className="dl-section highlights">
+      <section className="dl-section">
         <h2>What You’ll Learn</h2>
         <ul>
           <li>Understand the core principles of artificial neural networks and backpropagation</li>
@@ -32,7 +32,7 @@ function DeepLearningInternship() {
         </ul>
       </section>
 
-      <section className="dl-section features">
+      <section className="dl-section">
         <h2>Internship Highlights</h2>
         <div className="dl-grid">
           <div className="dl-card">
@@ -62,7 +62,7 @@ function DeepLearningInternship() {
         </div>
       </section>
 
-      <section className="dl-section apply">
+      <section className="dl-section">
         <h2>Who Should Apply?</h2>
         <p>
           This program is ideal for students in their final year, recent graduates, and working professionals who have foundational knowledge of Python and machine learning. Familiarity with libraries like NumPy, pandas, and matplotlib is recommended. Whether you're preparing for advanced AI roles or planning to pursue research, this internship will provide the real-world foundation you need.

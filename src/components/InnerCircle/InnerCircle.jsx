@@ -56,49 +56,50 @@ function InnerCircle() {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setResponseMsg('')
+  e.preventDefault()
+  setLoading(true)
+  setResponseMsg('')
 
-    try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbyb5lUlMAUgh67px_4HkSaAJZ1atEF-M_jco2B53c51uhtjlhk3XYg_xaIcuy1rWA/exec', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbyb5lUlMAUgh67px_4HkSaAJZ1atEF-M_jco2B53c51uhtjlhk3XYg_xaIcuy1rWA/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    })
 
-      const result = await response.json()
+    
+    setResponseMsg('APPLICATION SUBMITTED SUCCESSFULLY!')
+    setFormData({ name: '', email: '', phone: '', portfolio: '', reason: '' })
 
-      if (result.status === 'success') {
-        setResponseMsg('Application submitted successfully!')
-        setFormData({ name: '', email: '', phone: '', portfolio: '', reason: '' })
-      } else {
-        setResponseMsg('Submission failed: ' + result.message)
-      }
-    } catch (error) {
-      console.error(error)
-      setResponseMsg('')
-    }
-
-    setLoading(false)
+    // Refresh the page after 2 seconds
+    setTimeout(() => {
+      window.location.reload()
+    }, 2000)
+    
+  } catch (error) {
+    console.error(error)
+    setResponseMsg('An error occurred. Please try again later.')
   }
+
+  setLoading(false)
+}
+
 
   return (
     <section className="inner-circle-section">
       <RevealOnScroll>
         <div className="inner-hero">
-          <h1>Welcome to the Inner Circle</h1>
+          <h1>THE INNER CIRCLE</h1>
           <p>
             The Inner Circle is a curated tech community where passionate learners, aspiring data scientists, and professionals converge to collaborate, grow, and innovate together. From exclusive access to advanced AI projects and mentorship from industry experts, to hands-on learning opportunities, this initiative is tailored to empower the next wave of tech leaders. Whether you're looking to boost your resume, gain experience, or find your next collaborator, the Inner Circle is your gateway to a thriving, resource-rich ecosystem designed for impactful growth.
           </p>
-          <button className="inner-cta">Apply to Join</button>
         </div>
       </RevealOnScroll>
 
       <RevealOnScroll>
         <div className="inner-benefits">
-          <h2>Why Join?</h2>
+          <h2>WHY JOIN ?</h2>
           <div className="inner-benefit-list">
             <div className="benefit">
               <strong>1-on-1 Mentorship</strong>
@@ -125,36 +126,62 @@ function InnerCircle() {
       </RevealOnScroll>
 
       <RevealOnScroll>
-        <div className="inner-eligibility">
-          <h2>Who Should Join?</h2>
-          <div className="eligibility-grid">
-            <div className="eligibility-card">Students passionate about AI/ML</div>
-            <div className="eligibility-card">Tech professionals seeking mentorship</div>
-            <div className="eligibility-card">Career switchers eager to upskill</div>
-            <div className="eligibility-card">Freelancers looking to grow</div>
+  <div className="inner-eligibility">
+    <h2>WHO SHOULD JOIN?</h2>
+    <div className="eligibility-grid">
+      <div className="eligibility-card">
+        <strong>University Students</strong>
+        <p>
+          If you're an undergraduate or postgraduate student passionate about technology, this program offers hands-on experience with real-world AI/ML projects, mentorship from industry experts, and portfolio-building opportunities. It’s ideal for those aiming to gain a competitive edge in internships, research opportunities, or full-time tech roles post-graduation.
+        </p>
+      </div>
+      <div className="eligibility-card">
+        <strong>Working Professionals</strong>
+        <p>
+          Professionals in IT, software development, or adjacent fields who want to deepen their expertise or transition into AI, machine learning, or data science will benefit from our practical training, career guidance, and project-based mentorship. Build the knowledge and credibility needed to move into higher-impact technical roles.
+        </p>
+      </div>
+      <div className="eligibility-card">
+        <strong>Career Changers</strong>
+        <p>
+          If you're moving from a non-technical background and aiming to enter the tech industry, our program offers a guided pathway. Learn in-demand skills through a structured curriculum, hands-on projects, and community support that demystifies AI/ML and prepares you for entry-level roles or freelance opportunities.
+        </p>
+      </div>
+      <div className="eligibility-card">
+        <strong>Freelancers & Innovators</strong>
+        <p>
+          Whether you're a freelancer expanding your service offerings or an aspiring entrepreneur building a product, this program helps you harness the power of AI. Access technical mentorship, collaborate with peers, and gain skills that allow you to deliver smarter solutions and launch impactful tech-based ventures.
+        </p>
+      </div>
+    </div>
+  </div>
+</RevealOnScroll>
+
+
+      <RevealOnScroll>
+        <div className="inner-network" ref={typewriterRef}>
+          {isVisible && <Typewriter text="CONNECTED BY PURPOSE" speed={250} />}
+          <div className="innersub">
+            Start Building. Start Leading. Start with Spacedrift.
           </div>
         </div>
       </RevealOnScroll>
 
       <RevealOnScroll>
-        <div className="inner-network" ref={typewriterRef}>
-          {isVisible && <Typewriter text="Connected by Purpose" speed={200} />}
-          <InnerGlobe />
-        </div>
-      </RevealOnScroll>
-
-      <RevealOnScroll>
         <div className="inner-form">
-          <h2>Apply Now</h2>
+          <h2>APPLY NOW</h2>
           <form onSubmit={handleSubmit}>
             <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Your Name" required />
             <input type="email" name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required />
             <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" required />
             <input type="text" name="portfolio" value={formData.portfolio} onChange={handleChange} placeholder="LinkedIn or Portfolio URL" required />
-            <textarea name="reason" value={formData.reason} onChange={handleChange} placeholder="Why do you want to join?" rows="4" required></textarea>
+            <textarea name="reason" value={formData.reason} onChange={handleChange} placeholder="Why do you want to join?" rows="4"  style={{width:'95%'}} required></textarea>
+  
             <button type="submit" disabled={loading}>{loading ? 'Submitting...' : 'Submit Application'}</button>
+
             {responseMsg && <p className="form-response">{responseMsg}</p>}
           </form>
+           
         </div>
       </RevealOnScroll>
     </section>

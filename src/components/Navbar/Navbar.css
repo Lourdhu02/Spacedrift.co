@@ -1,121 +1,132 @@
 :root {
-  --charcoal: #1C1C1C; /* charcoal black */
-  --grayish: #6E6E6E;  /* medium gray */
-  --orangeAccent: rgb(249, 116, 42);
-  --purpleAccent: rgb(108, 42, 249);
+  --charcoal: #000000;
+  --grayish: #66666e;
+  --white: #f4f4f6;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+}
 
-  font-family: 'Inter', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body{
+  margin: 0;
+  
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+  font-optical-sizing: auto;
   padding: 15px;
+  background-color: var(--white);
+  color: var(--charcoal);
   position: sticky;
   top: 0;
-  z-index: 1000;
-
-  /* Glass effect */
-  background-color: rgba(28, 28, 28, 0.078); 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 100;
 }
-
 
 .logo {
-  font-family: 'Space Grotesk', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--charcoal);
+  font-family: "Figtree", sans-serif;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  color: var(--charcoal);
+  font-family: "Figtree", sans-serif;
   font-size: 16px;
-  color: var(--orangeAccent); /* Updated logo color */
-  font-weight: 400;
+  font-weight: 600;
 
-}
-
-.nav-desktop {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav-link {
-  font-family: 'Space Grotesk', sans-serif;
-  text-decoration: none;
-  color: var(--grayish); /* Updated text color */
-  font-weight: 400;
-  position: relative;
-  transition: color 0.3s;
-}
-
-.nav-link:hover {
-  color: var(--orangeAccent); /* Updated hover color */
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -4px;
-  background-color: var(--orangeAccent);
-  transition: width 0.3s ease-in-out;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
+  align-content: center;
+  align-items: center;
   cursor: pointer;
-  gap: 4px;
+  display: flex;
+  z-index: 101;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: var(--orangeAccent); /* Updated bar color */
-  transition: all 0.3s ease;
+
+.contact-link .nav-link {
+  color: var(--charcoal);
+  text-decoration: none;
+  font-family: "Figtree", sans-serif;
+  align-items: center;
+  font-weight: 600;
+  align-content: center;
+  display: flex;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+.nav-link span{
+  margin: 0px 5px;
+  font-size: 20px;
+  color: lightgray;
+  font-weight: 200;
 }
 
-@media (max-width: 768px) {
-  .nav-desktop {
-    display: none;
-  }
+.contact-link .nav-link:hover {
+  color: var(--grayish);
+}
 
-  .hamburger {
-    display: flex;
-  }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  backdrop-filter: blur(5px);
+  z-index: 998;
+}
 
-  .nav-links-mobile {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: var(--charcoal); /* Updated mobile nav bg */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem 2rem;
-    gap: 1.5rem;
-  }
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  padding: 25px;
+  z-index: 999;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
 
-  .nav-links-mobile .nav-link {
-    font-size: 1.2rem;
-    color: var(--grayish); /* Updated mobile link color */
-  }
+.close-button {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--charcoal);
+  cursor: pointer;
+  z-index: 1000;
+  transition: color 0.3s ease;
+}
 
-  .nav-links-mobile .nav-link:hover {
-    color: var(--orangeAccent);
-  }
+.close-button:hover {
+  color: var(--grayish);
+}
+
+.dropdown-item {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--charcoal);
+  text-decoration: none;
+  font-family: "Figtree", sans-serif;
+  transition: color 0.3s ease;
+}
+.dropdown-item small{
+  font-size: 14px;
+    font-family: "Figtree", sans-serif;
+  color: var(--grayish);
+}
+
+.dropdown-item:hover {
+  color: var(--grayish);
 }

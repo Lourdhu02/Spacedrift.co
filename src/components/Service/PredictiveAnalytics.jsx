@@ -42,10 +42,10 @@ function PredictiveAnalytics() {
 
       <div className="container">
         <div className='hero-text'>
-        <h1 className="title">AI-Powered Predictive Analytics</h1>
-        <p className="intro">
+        <h1 className="title">AI-Powered Predictive <strong>Analytics</strong></h1>
+        <div className="intro">
           Predictive analytics leverages historical data, statistical algorithms, and machine learning to forecast future events. At Spacedrift, we build custom predictive models to help businesses anticipate outcomes, make informed decisions, and gain competitive advantage.
-        </p>
+        </div>
         </div>
 
 
@@ -72,7 +72,7 @@ function PredictiveAnalytics() {
   </div>
   <div className="offer-card">
     <h3>Predictive Maintenance for IoT/Manufacturing</h3>
-    <p>We analyze sensor and log data from machinery to predict failures before they occur. This reduces downtime, extends equipment life, and enhances operational efficiency for factories and smart industries.</p>
+    <p>We analygze sensor and log data from machinery to predict failures before they occur. This reduces downtime, extends equipment life, and enhances operational efficiency for factories and smart industries.</p>
   </div>
   <div className="offer-card">
     <h3>Healthcare Diagnostics & Readmission Predictions</h3>
@@ -108,34 +108,30 @@ function PredictiveAnalytics() {
   <h2>Tools & Technologies</h2>
   <p>We utilize a powerful tech stack to ensure accuracy and scalability:</p>
 
-  <div className="tools-cards-grid">
-    <div className="tool-card">
-      <FaPython className="tool-icon" />
-      <h3>Python</h3>
-      <p>scikit-learn, pandas, statsmodels for robust statistical and ML pipelines.</p>
-    </div>
-    <div className="tool-card">
-      <FaChartLine className="tool-icon" />
-      <h3>Time Series Models</h3>
-      <p>Forecasting with ARIMA, Prophet, and LSTM models for time-based data insights.</p>
-    </div>
-    <div className="tool-card">
-      <FaTools className="tool-icon" />
-      <h3>ML Frameworks</h3>
-      <p>High-performance modeling using XGBoost, LightGBM, and AutoML platforms.</p>
-    </div>
-    <div className="tool-card">
-      <FaServer className="tool-icon" />
-      <h3>Deployment</h3>
-      <p>Scalable APIs built using Flask, FastAPI, and Docker for production delivery.</p>
-    </div>
-    <div className="tool-card">
-      <FaChartBar className="tool-icon" />
-      <h3>Visualization</h3>
-      <p>Interactive dashboards with Power BI, Tableau, and Plotly for business insight.</p>
+  <div className="infinite-scroll-container">
+    <div className="infinite-scroll-track">
+      {[...Array(2)].map((_, index) => (
+        <div className="infinite-scroll-group" key={index}>
+          {[
+            '/images/python.svg',
+            '/images/fastapi.svg',
+            '/images/numpy.svg',
+            '/images/pandas.svg',
+            '/images/plotly.svg',
+            '/images/jupyter.svg',
+          ].map((src, i) => (
+            <div className="scroll-image" key={`${index}-${i}`}>
+              <img src={src} alt={`tech-${i}`} />
+            </div>
+          ))}
+        </div>
+      ))}
     </div>
   </div>
 </div>
+
+
+
 
       </div>
     

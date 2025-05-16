@@ -7,7 +7,7 @@ function MachineLearningInternship() {
   return (
     <div className="ml-container">
       <header className="ml-header">
-        <h1>Machine Learning Internship</h1>
+        <h1>Machine Learning <strong>Internship</strong></h1>
         <p>Build Predictive Intelligence Through Core ML Concepts and Practical Application</p>
       </header>
 

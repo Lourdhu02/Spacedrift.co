@@ -1,6 +1,10 @@
-p strong{
-    font-family: 'Space Grotesk', sans-serif;
+
+div h1{
+  font-family: "Figtree", sans-serif;
 }
-.p-content{
-    font-family: 'Space Grotesk', sans-serif;
+:root {
+  --charcoal: #000000;
+  --grayish: #66666e;
+  --white: #f4f4f6;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
 }

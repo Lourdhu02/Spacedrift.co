@@ -36,7 +36,7 @@ function ComputerVision() {
 
       <div className="container">
         <div className='hero-text'>
-        <h1 className="title">Computer Vision Applications</h1>
+        <h1 className="title">Computer Vision <strong>Applications</strong></h1>
         <p className="intro">
           At Spacedrift, we develop intelligent vision systems that empower machines to understand and interpret visual data. From precision-based manufacturing quality checks to real-time surveillance and diagnostics, our AI-powered models bring automation and accuracy to image and video analysis.
         </p>

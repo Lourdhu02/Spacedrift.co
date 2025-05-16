@@ -7,7 +7,7 @@ function WebDevelopmentInternship() {
   return (
     <div className="webdev-container">
       <header className="webdev-header">
-        <h1>Web Development Internship</h1>
+        <h1>Web Development <strong>Internship</strong></h1>
         <p>Develop Full-Stack Web Applications with Modern Frameworks and Real-World Deployments</p>
       </header>
 

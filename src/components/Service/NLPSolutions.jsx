@@ -36,7 +36,7 @@ function NLPSolutions() {
 
       <div className="container">
         <div className='hero-text'>
-        <h1 className="title">Natural Language Processing Solutions</h1>
+        <h1 className="title">Natural Language Processing <strong>Solutions</strong></h1>
         <p className="intro">
         Spacedrift builds advanced NLP systems that enable machines to understand and generate language, automating workflows and extracting insights from complex text across industries.
         </p>

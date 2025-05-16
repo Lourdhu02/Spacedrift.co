@@ -1,85 +1,156 @@
-.footer-content{
-    display: flex;
-    gap: 4rem;
-    flex-direction: row;
-    color: var(--charcoal);
+.footer {
+  background-color: var(--charcoal);
+  color: white;
+  padding: 20px;
+  font-family: "Figtree", sans-serif;
 }
-.footer-content .footer-content{
-    flex:1 ;
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
-.footer-content .footer-links{
-    flex:1 ;
-   
+
+
+.footer-logo {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.footer-tagline {
+  font-size: 16px;
+  color: var(--grayish);
+  margin-top: 10px;
+  max-width: 280px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .footer-links div{
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--grayish);
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 2rem;
+}
+.footer-links div strong{
+  color: var(--grayish);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+.footer-links div a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  margin: 0.3rem 0;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.footer-links div a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background-color:lightgray;
+  transition: width 0.3s ease;
+}
+
+.footer-links div a:hover {
+  color: lightgray;
+  scale: 1.05;
+  transition: all 0.5s ease;
+}
+
+.footer-links div a:hover::after {
+  width: 100%;
+}
+
+
+.footer-column {
+  min-width: 120px;
+}
+
+.footer-column h4 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-column a {
+  display: block;
+  text-decoration: none;
+  color: var(--purpleAccent);
+  font-size: 14px;
+  margin: 0.3rem 0;
+  transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+  color: var(--orangeAccent);
+}
+
+.footer-socials {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-socials a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-socials i {
+  color: var(--purpleAccent);
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.footer-socials i:hover {
+  color: var(--orangeAccent);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 13px;
+  color: var(--grayish);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-content {
     flex-direction: column;
-    margin-top: 10px;
+    align-items: flex-start;
+    gap: 2rem;
   }
 
-.footer-content .footer-socials{
-    flex:1 ;
-    display: flex;
-    flex-direction: row;
-    align-items: start ;
-    gap: 1rem;
-}
-
-.footer-links div a{
-    text-decoration: none   ;
-    color: var(--purpleAccent);
-}
-.footer-links div a:hover{
-    color: var(--orangeAccent);
-    transition: all 1s;
-}
-.footer{
-    background-color: var(--charcoal);
-    max-width: 100%;
-    padding: 15px;
-}
-.footer-logo{
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--purpleAccent);
-  }
-.footer-tagline{
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: var(--grayish);
-    margin-top: 10px;
-  }
-
-
-.footer-socials  a i{
-    justify-content: center;
+  .footer-links {
+    flex-direction: column;
     gap: 1.5rem;
-    color: var(--purpleAccent);
-    margin-bottom: 1.5rem;
   }
-  
-  
-  .footer-socials a i{
-    color: var(--purpleAccent);
-    font-size: 1.25rem;
-    transition: 0.3s;
+
+  .footer-socials {
+    flex-direction: row;
+    gap: 1rem;
   }
-  
-  .footer-socials a i:hover {
-    color: var(--orangeAccent);
-    transition: all 1s;
+
+  .footer-logo {
+    font-size: 22px;
   }
-  .footer p{
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--grayish);
-    margin-top: 10px;
-  }
-  
+}
